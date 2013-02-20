@@ -99,6 +99,10 @@ a:hover {
 	margin-top: -20px;
 }
 
+#description {
+	width: 350px;
+}
+
 #follower {
 	display: inline-block;
 }

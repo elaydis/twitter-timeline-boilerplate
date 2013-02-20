@@ -21,6 +21,7 @@
 				event.preventDefault();
 				// alert($("#username-input").val());
 				var user = $("#search").val();
+				console.log(user.charAt(0));
 				console.log(user);
 			    $("#tweets").twitterTimeline(user);
 			});
@@ -47,7 +48,7 @@
 	<section id="user-data">
 		<div id="wrapper">
 
-			<img src="img/test.jpg">	
+			<img id="profile-image" src="img/test.jpg">	
 		<div id="user-info">	   
 		   <h2 id="name">Peter Petersen</h2>
 		      <a href="varible" id="website">www.peter.com</a>

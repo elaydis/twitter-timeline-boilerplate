@@ -20,6 +20,8 @@
 			$("#search-username").submit(function(event) {
 				event.preventDefault();
 				// alert($("#username-input").val());
+				$("li").remove();
+
 				var user = $("#search").val();
 				console.log(user.charAt(0));
 				console.log(user);
@@ -56,6 +58,7 @@
 		      <p id="description">Ist geil!</p>
 		      <div id="follower">Follower: 123</div>
 		      <div id="follows">Folgt: 123</div>
+		      <h1 id="hashtag"></h1>
 		  </div>
 		</div>
 	</section>

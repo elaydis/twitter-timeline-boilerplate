@@ -125,7 +125,7 @@
 			$("#hashtag").hide();
 		}
 
-		function showHashtag(user){
+		function showHashtag(hashtag){
 			$("#location").hide();
 			$("#name").hide();
 			$("#follower").hide();
@@ -134,9 +134,10 @@
 			$("#website").hide();
 			$("#profile-image").hide();	
 			$("#hashtag").show();
-			$("#hashtag").replaceWith('<h1 id="#hashtag">'+ user + '</h1>');
+			$("#hashtag").replaceWith('<h1 id="#hashtag">'+ hashtag + '</h1>');
 
 		}
+
 
 	//
 	// -- Private utility functions ------------------------------------------------------------------------------------------------------------------

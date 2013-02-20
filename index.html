@@ -20,6 +20,8 @@
 			$("#search-username").submit(function(event) {
 				event.preventDefault();
 				// alert($("#username-input").val());
+				$("li").remove();
+
 				var user = $("#search").val();
 				console.log(user.charAt(0));
 				console.log(user);

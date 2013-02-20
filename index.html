@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<title>Tweeeeetbook</title>
-	<link rel="stylesheet" href="styles/noramlze.css" type="text/css" />
+	<link rel="stylesheet" href="styles/normalize.css" type="text/css" />
 	<link rel="stylesheet" href="styles/style.css" type="text/css" />
 
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
@@ -12,21 +12,17 @@
 
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>	
 	<script src="js/jquery.twitter-timeline.js"></script>
-	<script src="js/main.js"></script>
 
 	<script>
 		$(document).ready(function($) {
-			$("#username-div").hide();
-			$("#tweets").twitterTimeline("@htw_berlin");
-			$("#search-username").click(function() {
-				$("#username-div").show("normal");
-			});
-			$("#submit-username").click(function() {
+			//$("#tweets").twitterTimeline("@htw_berlin");
+
+			$("#search-username").submit(function(event) {
+				event.preventDefault();
 				// alert($("#username-input").val());
-				var user = $("#username-input").val();
-				alert (user);
+				var user = $("#search").val();
+				console.log(user);
 			    $("#tweets").twitterTimeline(user);
-				$("#username-div").hide("normal");
 			});
 		});		
 	</script>
@@ -40,16 +36,13 @@
 		<div class="header" id="twitter-icon"></div>
 		     <h1 class="header">Tweetinator</h1>
 		         <h2 class="header">I will tweet back</h2>
-		     <input id="search" class="header" autocomplete="on" placeholder="Search" />
-		<div id="search-username" class="header">clickme</div>
-	    </div>
 
+		    <form id="search-username">
+		    	<input id="search" class="header" type="search" placeholder="Search"/>
+				<input type="submit" class="header" />
+			</form>
 	</header>
 
-	<div id="username-div">
-	<input id="username-input" placeholder="@Username"/>
-	<button id="submit-username">Submit</button>
-	</div>
 
 	<section id="user-data">
 		<div id="wrapper">

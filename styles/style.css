@@ -32,6 +32,7 @@ section#user-data{
 	background-color: lightsteelblue;
 	border-top: solid 5px black;
 	border-bottom: solid 5px black;
+	box-shadow: 0px 8px 8px darkgrey;
 }
 
 #wrapper {
@@ -39,7 +40,6 @@ section#user-data{
 	height: 250px;
 	margin-left: auto;
 	margin-right: auto;
-
 }
 
 #user-info{
@@ -57,11 +57,14 @@ section#user-data{
 
 #tweetbox {
 	width: 900px;
+	max-height:500px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 1em;
+	border: inset darkgrey;
+	overflow: auto;
 }
 
 ul {
@@ -69,7 +72,8 @@ ul {
 }
 
 li {
-	width: 100%;
-	margin: 10px auto;
-	box-shadow: 0 0 1em black;
+	width: auto;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom: 1px darkgrey inset;
 }

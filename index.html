@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-DE">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-	<title>GIM Twitter Feed Example</title>
+	<title>Tweeeeetbook</title>
+	<link rel="stylesheet" href="styles/noramlze.css" type="text/css" />
+	<link rel="stylesheet" href="styles/style.css" type="text/css" />
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,700' rel='stylesheet' type='text/css'>
+
 	<script src="http://code.jquery.com/jquery-1.7.2.js"></script>	
-	<script src="jquery.twitter-timeline.js"></script>
+	<script src="js/jquery.twitter-timeline.js"></script>
+	<script src="js/main.js"></script>
+
 	<script>
 		$(document).ready(function($) {
 			$("#tweets").twitterTimeline("@htw_berlin");
 		});		
 	</script>
+
+
 </head>
 <body>
-	
-	<ul id="tweets"></ul>
+
+	<header>
+		<div id="twitter-icon"></div>
+		     <h1>Tweetinator</h1>
+		         <h2>I will tweet back</h2>
+		     <input id="search" autocomplete="on" placeholder="Search" />
+		<div id="search-username"></div>
+	</header>
+
+	<section id="user-data">
+		<img src="img/test.jpg">		   
+		   <h2 id="name">Peter Petersen</h2>
+		      <a href="varible" id="website">p.p.de</a>
+		      <p id="location">Berlin</p>
+		      <p id="describtion">Ist geil!</p>
+		      <div id="follower">Sklaven: 123</div>
+		      <div id="follows">Folgt: 123</div>
+	</section>
+
+	<section>
+	     <ul id="tweets"></ul>
+	</section>
 
 </body>
 </html>

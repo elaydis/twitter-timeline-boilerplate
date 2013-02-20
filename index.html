@@ -36,11 +36,19 @@
 <body>
 
 	<header>
+<<<<<<< HEAD
 		<div id="twitter-icon"></div>
 		     <h1>Tweetinator</h1>
 		         <h2>I will tweet back</h2>
 		     <input id="search" autocomplete="on" placeholder="Search" />
 		<div id="search-username">Search Username</div>
+=======
+		<div class="header" id="twitter-icon"></div>
+		     <h1 class="header">Tweetinator</h1>
+		         <h2 class="header">I will tweet back</h2>
+		     <input id="search" class="header" autocomplete="on" placeholder="Search" />
+		<div id="search-username" class="header">clickme</div>
+>>>>>>> 72a8a02049d1bfabc64bf7f8ca9843403adeba28
 	</header>
 
 	<div id="username-div">
@@ -49,16 +57,21 @@
 	</div>
 
 	<section id="user-data">
-		<img src="img/test.jpg">		   
+		<div id="wrapper">
+
+			<img src="img/test.jpg">	
+		<div id="user-info">	   
 		   <h2 id="name">Peter Petersen</h2>
 		      <a href="varible" id="website">p.p.de</a>
 		      <p id="location">Berlin</p>
-		      <p id="describtion">Ist geil!</p>
+		      <p id="description">Ist geil!</p>
 		      <div id="follower">Sklaven: 123</div>
 		      <div id="follows">Folgt: 123</div>
+		  </div>
+		</div>
 	</section>
 
-	<section>
+	<section id="tweetbox">
 	     <ul id="tweets"></ul>
 	</section>
 

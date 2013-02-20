@@ -2,4 +2,78 @@ body {
 	width: 100%;
 	height: 100%;
 	background-color: white;
+	font-family: Helvetica;
+}
+
+.header {
+	float: left;
+	padding: 10px;
+	margin: 5px;
+	display: block;
+}
+
+h1.header{
+	font-size: 20px;
+}
+
+h2.header{
+	font-size: 20px;
+}
+
+input.header{
+
+}
+
+div.header{
+
+}
+
+section#user-data{
+	clear: both;
+	width: 100%;
+	background-color: lightsteelblue;
+	border-top: solid 5px black;
+	border-bottom: solid 5px black;
+}
+
+#wrapper {
+	width: 700px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#user-info{
+	float: left;
+	margin-left: 20px;
+}
+
+#user-data img {
+	float: left;
+	height: 210px;
+	width: auto;
+	margin: 20px;
+	border-radius: 1em;
+}
+
+#tweetbox {
+	width: 900px;
+	border: solid 3px black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 1em;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	border-bottom: solid 1px black;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
 }

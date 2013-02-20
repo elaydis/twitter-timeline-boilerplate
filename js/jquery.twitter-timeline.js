@@ -108,6 +108,30 @@
 		}
 
 
+		function showUserData(){
+			$("#location").show();
+			$("#name").show();
+			$("#follower").show();
+			$("#follows").show();
+			$("#description").show();
+			$("#website").show();
+			$("#profile-image").show();	
+			$("#hashtag").hide();
+		}
+
+		function showHashtag(user){
+			$("#location").hide();
+			$("#name").hide();
+			$("#follower").hide();
+			$("#follows").hide();
+			$("#description").hide();
+			$("#website").hide();
+			$("#profile-image").hide();	
+			$("#hashtag").show();
+			$("#hashtag").replaceWith('<h1 id="#hashtag">'+ user + '</h1>');
+
+		}
+
 	//
 	// -- Private utility functions ------------------------------------------------------------------------------------------------------------------
 	//	the following two functions are helpers for formatting entries. You probably shouldn't change any of that code.
@@ -232,13 +256,16 @@
 		$container = $(this);
 
 		if(user.charAt(0) == "@"){	
-		loadTweets(user);
-		loadUserData(user);
-		//loadUserImage(user);
-	}
-		else
-		loadTweetsByHashtag(user);
-	
+			loadTweets(user);
+			loadUserData(user);
+			showUserData();
+			//loadUserImage(user);
+		}
+		else {
+			loadTweetsByHashtag(user);
+			showHashtag(user);			
+		}
+		
 	};
 
 	

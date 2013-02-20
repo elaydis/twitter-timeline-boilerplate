@@ -11,6 +11,30 @@
 	var tweetTemplate = '<li class="tweet">CONTENT<div class="time">TIME</div></li>'; 
 	var $container = null;
 
+	function loadTweetsByHashtag(hashtag) {
+		$.ajax({
+			url: 'http://search.twitter.com/search.json',
+			type: 'GET',
+			dataType: 'jsonp',
+			data: {
+				q : hashtag
+			},			
+			success: displayTweetsByHashtag
+		});
+	};
+
+	function displayTweetsByHashtag(data) {
+
+		for (var i = 0; i < data.results.length; i++) {
+			var tweet = tweetTemplate
+				.replace('CONTENT', ify.clean(data.results[i].text))
+				.replace('TIME', timeAgo(data.results[i].created_at));
+				
+			$container.append(tweet); 
+		};		
+	};
+
+
 	/**
 		* load some tweets using the user_timeline API
 		* documentation: https://dev.twitter.com/docs/api/1/get/statuses/user_timeline
@@ -35,6 +59,7 @@
 		* @param {object} data returned from Twitter API
 		*/
 	function displayTweets(data) {
+
 		for (var i = 0; i < data.length; i++) {
 			var tweet = tweetTemplate
 				.replace('CONTENT', ify.clean(data[i].text))
@@ -43,6 +68,30 @@
 			$container.append(tweet); 
 		};		
 	};
+
+	function loadUserData(user) {
+		$.ajax({
+			url: 'http://api.twitter.com/1/users/show.json',
+			type: 'GET',
+			dataType: 'jsonp',
+			data: {
+				screen_name: user,			
+				include_entities: true
+			},			
+			success: displayUserData
+		});
+	};
+
+	function displayUserData(data){
+		console.log(data);
+	 	$("#location").replaceWith('<p id="location">' + data.location + "</p>");
+		$("#name").replaceWith('<h2 id="name">' + data.name + "</h2>");
+		$("#followers").replaceWith('<p id="followers">' + data.followers_count + "</p>");
+		$("#follows").replaceWith('<p id="follows">' + data.friends_count + "</p>");
+		$("#description").replaceWith('<p id="description">' + data.description + "</p>");
+		$("#website").replaceWith('<a id="website">' + data.url + "</a>");
+		//$("#profile-image").replaceWith('<img id="profile-image">' + data.profile_image_url + "</img>");
+	}
 
 	//
 	// -- Private utility functions ------------------------------------------------------------------------------------------------------------------
@@ -165,9 +214,16 @@
 		*/	
 	$.fn.twitterTimeline = function(user) {
 		
-		$container = $(this);		
+		$container = $(this);
+
+		if(user.charAt(0) == "@"){	
 		loadTweets(user);
+		loadUserData(user);
+	}
+		else
+		loadTweetsByHashtag(user);
 	
 	};
+
 	
 })(jQuery);

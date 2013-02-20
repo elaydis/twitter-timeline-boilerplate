@@ -5,11 +5,17 @@ body {
 	font-family: Helvetica;
 }
 
+header {
+	width: 100%;
+}
+
+#header {
+	width: 600px;
+	margin-left: 20px;
+}
+
 .header {
-	float: left;
-	padding: 10px;
-	margin: 5px;
-	display: block;
+	display: inline-block;
 }
 
 h1.header{
@@ -18,14 +24,6 @@ h1.header{
 
 h2.header{
 	font-size: 20px;
-}
-
-input.header{
-
-}
-
-div.header{
-
 }
 
 section#user-data{

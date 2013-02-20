@@ -97,12 +97,18 @@
 
 	function displayUserData(data){
 		console.log(data);
-	 	$("#location").replaceWith('<p id="location">' + data.location + "</p>");
-		$("#name").replaceWith('<h2 id="name">' + data.name + "</h2>");
-		$("#follower").replaceWith('<p id="follower"> Followers: ' + data.followers_count + "</p>");
-		$("#follows").replaceWith('<p id="follows"> Following: ' + data.friends_count + "</p>");
-		$("#description").replaceWith('<p id="description">' + data.description + "</p>");
-		$("#website").replaceWith('<a id="website">' + data.url + "</a>");
+	 
+	 	$("#location").replaceWith('<p id="location">' + data.location + '</p>');
+		$("#name").replaceWith('<h2 id="name">' + data.name + '</h2>');
+		$("#follower").replaceWith('<p id="follower"> Followers: ' + data.followers_count + '</p>');
+		$("#follows").replaceWith('<p id="follows"> Following: ' + data.friends_count + '</p>');
+		$("#description").replaceWith('<p id="description">' + data.description + '</p>');
+		if(data.url != null){
+			$("#website").replaceWith('<a id="website" href="'+ data.url +'">' + data.url + '</a>');
+		} else {
+			$("#website").replaceWith('<a id="website"></a>');
+		}
+
 		$("#profile-image").replaceWith('<img id="profile-image" src="' + data.profile_image_url + '"></img>');
 
 		}

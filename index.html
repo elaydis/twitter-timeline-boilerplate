@@ -30,15 +30,24 @@
 		});		
 	</script>
 
+	<script type="text/javascript">
+     	$(document).ready(function() {
+
+     	    $("#start").delay(1000).fadeOut(1600, function() { $(this).remove(); });
+     	    $("#welcome").delay(450).fadeOut(900, function() { $(this).remove(); });
+     	});
+     	</script>
 
 </head>
 <body>
+
+	<div id="start"><p id="welcome"><span>W</span>elcome to <span>T</span>weetinator</div>
 
 	<header>
 		<div id="header">
 		<div class="header" id="twitter-icon"></div>
 		     <h1 class="header">Tweetinator</h1>
-		         <h2 class="header">I will tweet back</h2>
+		         <h2 class="header">I'll tweet back</h2>
 
 		    <form class="header" id="search-username">
 		    	<input id="search" class="header" type="search" placeholder="Search"/>

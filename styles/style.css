@@ -59,7 +59,6 @@ section#user-data{
 
 #tweetbox {
 	width: 900px;
-	border: solid 3px black;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
@@ -72,8 +71,7 @@ ul {
 }
 
 li {
-	border-bottom: solid 1px black;
-	margin-left: auto;
-	margin-right: auto;
 	width: 100%;
+	margin: 10px auto;
+	box-shadow: 0 0 1em black;
 }

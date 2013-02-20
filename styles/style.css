@@ -93,6 +93,11 @@ h2.header{
 	top:1px;
 }
 
+h1 {
+	font-size: 100px;
+	margin-left: -50px;
+	margin-top: 55px;
+}
 
 section#user-data{
 	clear: both;

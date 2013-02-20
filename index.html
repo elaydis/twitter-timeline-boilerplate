@@ -15,7 +15,7 @@
 
 	<script>
 		$(document).ready(function($) {
-			//$("#tweets").twitterTimeline("@htw_berlin");
+			$("#tweets").twitterTimeline("@htw_berlin");
 
 			$("#search-username").submit(function(event) {
 				event.preventDefault();
@@ -37,7 +37,7 @@
 		     <h1 class="header">Tweetinator</h1>
 		         <h2 class="header">I will tweet back</h2>
 
-		    <form id="search-username">
+		    <form class="header" id="search-username">
 		    	<input id="search" class="header" type="search" placeholder="Search"/>
 				<input type="submit" class="header" />
 			</form>
@@ -50,8 +50,8 @@
 			<img src="img/test.jpg">	
 		<div id="user-info">	   
 		   <h2 id="name">Peter Petersen</h2>
-		      <a href="varible" id="website">p.p.de</a>
-		      <p id="location">Berlin</p>
+		      <a href="varible" id="website">www.peter.com</a>
+		      <p id="location">Berlin, Germany</p>
 		      <p id="description">Ist geil!</p>
 		      <div id="follower">Follower: 123</div>
 		      <div id="follows">Folgt: 123</div>
